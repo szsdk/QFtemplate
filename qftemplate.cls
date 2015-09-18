@@ -18,7 +18,9 @@
 %Color defination
 %---------------------------
 
-\RequirePackage[svgnames]{xcolor}
+%\RequirePackage[svgnames]{xcolor}
+
+\RequirePackage{color}
 
 \definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
