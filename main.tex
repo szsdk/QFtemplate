@@ -1,21 +1,68 @@
 % !Mode:: "TeX:UTF-8"
 \documentclass{qftemplate}
+
+\usepackage{siunitx}
+\usepackage{metalogo}
+
 \author{萃英学院\ 沈周}
 \title{量子场论作业1}
+
 \begin{document}
 \maketitle
 \section{简介}
-hello
-\begin{question}[如何正确的输入单位]
-    jjj
+这是兰州大学2015年秋季学期的\LaTeX 模板。
+\section{模板使用}
+\begin{question}
+如何使用此模板？
 \end{question}
 \begin{proof}[解]
-    jjj 
+    将{\tt qftemplate.cls}文件放在作业{\tt .tex}文档的目录下，在作业文档第一行加入
+    \begin{verbatim}
+\documentclass{qftemplate}
+    \end{verbatim}
+    就可以调用此模板，{\it 并用 \XeLaTeX 编译文件}。
 \end{proof}
-\begin{question}[宇宙超级无敌粒子]
-    粒子    
+
+\begin{question}[输入问题与解答]
+如何正确的输入问题与解答?
 \end{question}
+\begin{proof}[解]
+    此模板中已经定义了输入问题的环境{\tt question}，可以按如下方式在正文中使用：\marginnote{其中中括号内的内容可以省略。}
+\begin{verbatim}
+\begin{question}[输入问题与解答]
+如何正确的输入问题与解答?
+\end{question}
+\end{verbatim}
+以及一个解答环境{\tt proof}，使用方式与问题环境的使用类似：\marginnote{若省略这个中括号中的内容，证明的题头默认是{\it Proof}。}
+\begin{verbatim}
 \begin{proof}[证明]
-    jjj 粒子    
+    略。
+\end{proof}
+\end{verbatim}
+\end{proof}
+
+\begin{question}[边注释]
+    如何在此模板中使用边注释?
+\end{question}
+\begin{proof}[解]
+    在需要边注释处用以下的方式插入：
+\begin{verbatim}
+\marignnote{这是边注释}
+\end{verbatim}
+但为了得到正确的显示结果，需要将文档编译两遍。
+\end{proof}
+
+\begin{question}[输入单位]
+如何正确的输入物理量：\SI{12}{GeV}？
+\end{question}
+\begin{proof}[解]
+    在导言区输入
+\begin{verbatim}
+\usepackage{siunitx}
+\end{verbatim}
+然后在正文中使用
+\begin{verbatim}
+\SI{12}{GeV}
+\end{verbatim}
 \end{proof}
 \end{document}

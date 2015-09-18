@@ -1,13 +1,13 @@
 %vim: set ft=latex
+%Author: Shen Zhou
+%Date: 2015-09-18
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{qftemplate}[25/01/2012, v1.0]
-%\LoadClass[a4paper,twoside]{article}
-\LoadClass[a4paper]{ctexart}
+\LoadClass[a4paper,twoside]{article}
+%\LoadClass[a4paper]{ctexart}
 
 %\RequirePackage[T1]{fontenc}
-
-\RequirePackage{vector}
 
 \RequirePackage{kvoptions}
 \RequirePackage{etoolbox}
@@ -18,9 +18,9 @@
 %Color defination
 %---------------------------
 
-%\RequirePackage[svgnames]{xcolor}
+\RequirePackage[svgnames]{xcolor}
 
-\RequirePackage{color}
+%\RequirePackage{color}
 
 \definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
@@ -29,7 +29,8 @@
 %---------------------------
 %hyperlink
 %---------------------------
-\RequirePackage[unicode,psdextra]{hyperref} % Required for hyperlinks
+%\RequirePackage[unicode,psdextra]{hyperref} % Required for hyperlinks
+\RequirePackage[unicode]{hyperref} % Required for hyperlinks
 \hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 \RequirePackage[nameinlink]{cleveref}
 
@@ -46,6 +47,17 @@
 \DeclareVoidOption{nomargin}{\ekv{mgn = nomargin}}
 
 \ProcessKeyvalOptions*\relax
+%---------------------------
+%margin note and page style
+%---------------------------
+
+\ifdefstring{\NOTECLASS@mgn}{margin}{
+\RequirePackage{marginnote}
+%\RequirePackage[top=1.5cm, bottom=1.5cm, outer=5cm, inner=2cm, heightrounded, marginparwidth=2.5cm, marginparsep=2cm]{geometry}
+\RequirePackage[top=3.5cm, bottom=3.5cm, outer=7cm, inner=2.5cm, heightrounded, marginparwidth=4.5cm, marginparsep=1.5cm]{geometry}
+}{
+\RequirePackage[top=3.5cm, bottom=3.5cm,outer=3cm, inner=4.5cm, heightrounded]{geometry}
+}
 
 % ------ Language --
 
@@ -54,6 +66,7 @@
 %----------------------------------------------------------------------
 %	Unicode
 %----------------------------------------------------------------------
+    \RequirePackage{ctex}
     \renewcommand{\contentsname}{目\hspace{1em}录}
     \renewcommand{\figurename}{图}
     \renewcommand{\abstractname}{摘\hspace{1em}要}
@@ -75,23 +88,7 @@
     \crefformat{subsection}{#2第#1节#3}
 }{\relax}
 
-%---------------------------
-%Unicode Math
-%---------------------------
-\RequirePackage{unicode-math}
-\unimathsetup{bold-style=ISO}
 
-%---------------------------
-%margin note and page style
-%---------------------------
-
-\ifdefstring{\NOTECLASS@mgn}{margin}{
-\RequirePackage{marginnote}
-%\RequirePackage[top=1.5cm, bottom=1.5cm, outer=5cm, inner=2cm, heightrounded, marginparwidth=2.5cm, marginparsep=2cm]{geometry}
-\RequirePackage[top=3.5cm, bottom=3.5cm, outer=7cm, inner=2.5cm, heightrounded, marginparwidth=4.5cm, marginparsep=1.5cm]{geometry}
-}{
-\RequirePackage[top=3.5cm, bottom=3.5cm,outer=3cm, inner=4.5cm, heightrounded]{geometry}
-}
 
 %---------------------------
 %section style
@@ -155,11 +152,8 @@ justification=raggedright]{caption}
 %---------------------------
 \RequirePackage{graphicx}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-\RequirePackage{makecell}
 %\RequirePackage{mymath}
-\RequirePackage{siunitx}
 \RequirePackage{placeins}
-\RequirePackage{minted}
 \RequirePackage{amsmath, amsthm}
 
 %---------------------------
