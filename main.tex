@@ -24,13 +24,13 @@
 \end{proof}
 
 \begin{question}[输入问题与解答]
-如何正确的输入问题与解答?
+    如何正确的输入问题与解答？
 \end{question}
 \begin{proof}[解]
     此模板中已经定义了输入问题的环境{\tt question}，可以按如下方式在正文中使用：\marginnote{其中中括号内的内容可以省略。}
 \begin{verbatim}
 \begin{question}[输入问题与解答]
-如何正确的输入问题与解答?
+如何正确的输入问题与解答？
 \end{question}
 \end{verbatim}
 以及一个解答环境{\tt proof}，使用方式与问题环境的使用类似：\marginnote{若省略这个中括号中的内容，证明的题头默认是{\it Proof}。}
@@ -42,7 +42,7 @@
 \end{proof}
 
 \begin{question}[边注释]
-    如何在此模板中使用边注释?
+    如何在此模板中使用边注释？
 \end{question}
 \begin{proof}[解]
     在需要边注释处用以下的方式插入：
@@ -50,6 +50,16 @@
 \marignnote{这是边注释}
 \end{verbatim}
 但为了得到正确的显示结果，需要将文档编译两遍。
+\end{proof}
+
+\begin{question}[关闭边注释]
+    如何在此模板中关闭边注释？
+\end{question}
+\begin{proof}[解]
+    在第一行声明文档类型时加入参数{\tt [nomargin]}，即把第一行改为
+\begin{verbatim}
+\documentclass[nomargin]{qftemplate}
+\end{verbatim}
 \end{proof}
 
 \begin{question}[输入单位]
@@ -65,4 +75,5 @@
 \SI{12}{GeV}
 \end{verbatim}
 \end{proof}
+
 \end{document}

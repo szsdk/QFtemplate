@@ -152,7 +152,6 @@ justification=raggedright]{caption}
 %---------------------------
 \RequirePackage{graphicx}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-%\RequirePackage{mymath}
 \RequirePackage{placeins}
 \RequirePackage{amsmath, amsthm}
 
