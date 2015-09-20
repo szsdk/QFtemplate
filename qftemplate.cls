@@ -133,7 +133,8 @@
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
 
 \renewcommand{\@maketitle}{%
-    {\raggedright\color{color1}\heiti\fontspec{Arial}\fontsize{20}{25}\selectfont \@title\par}%
+    %{\raggedright\color{color1}\CJKfontspec{微软雅黑}\fontspec{微软雅黑}\fontsize{20}{25}\selectfont \@title\par}%
+    {\raggedright\color{color1}\sffamily\fontsize{20}{25}\selectfont \@title\par}%
     \vskip10pt%
 %{\raggedright\color{color1}\it\fontsize{12}{16}\selectfont  \@author\par}%
     {\raggedright\itshape\fontsize{12}{16}\selectfont  \@author\par}%
@@ -152,7 +153,6 @@ justification=raggedright]{caption}
 %---------------------------
 \RequirePackage{graphicx}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-%\RequirePackage{mymath}
 \RequirePackage{placeins}
 \RequirePackage{amsmath, amsthm}
 
