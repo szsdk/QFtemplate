@@ -118,12 +118,6 @@
 \pagestyle{fancy}          % Enables the custom headers/footers
 \fancyhead[RO,LE]{\color{color1!80}\thepage}
 \fancyhead[LO,RE]{}
-%% Headers
-%\fancyheadoffset{1cm}
-%\lhead{}%
-%\chead{}%
-%\rhead{\color{color1!80}\thepage}
-% Footers
 \lfoot{}%
 \cfoot{}%
 \rfoot{}%
@@ -133,10 +127,8 @@
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
 
 \renewcommand{\@maketitle}{%
-    %{\raggedright\color{color1}\CJKfontspec{微软雅黑}\fontspec{微软雅黑}\fontsize{20}{25}\selectfont \@title\par}%
     {\raggedright\color{color1}\sffamily\fontsize{20}{25}\selectfont \@title\par}%
     \vskip10pt%
-%{\raggedright\color{color1}\it\fontsize{12}{16}\selectfont  \@author\par}%
     {\raggedright\itshape\fontsize{12}{16}\selectfont  \@author\par}%
     \noindent\rule{\textwidth}{0.4mm}
 }%
@@ -161,63 +153,3 @@ justification=raggedright]{caption}
 %---------------------------
 
 \newtheorem{question}{问题}
-
-%\RequirePackage{listings}
-%\definecolor{mygreen}{rgb}{0,0.6,0}
-%\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-%\definecolor{mymauve}{rgb}{0.58,0,0.82}
-
-%\lstset{ %    
-    %basicstyle=\ttfamily\footnotesize,        % the size of the fonts that are used for the code
-    %breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-    %breaklines=true,                 % sets automatic line breaking
-    %captionpos=b,                    % sets the caption-position to bottom
-    %commentstyle=\color{mygreen},    % comment style
-    %deletekeywords={...},            % if you want to delete keywords from the given language
-    %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-    %extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-    %frame=single,                    % adds a frame around the code
-    %keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-    %keywordstyle=\color{blue},       % keyword style
-    %language=Matlab,                 % the language of the code
-    %morekeywords={*,...},            % if you want to add more keywords to the set
-    %numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-    %numbersep=5pt,                   % how far the line-numbers are from the code
-    %numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-    %rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-    %showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-    %showstringspaces=false,          % underline spaces within strings only
-    %showtabs=false,                  % show tabs within strings adding particular underscores
-    %stringstyle=\color{mymauve},     % string literal style
-    %tabsize=2,                       % sets default tabsize to 2 spaces
-    %title=\lstname                  % show the filename of files included with \lstinputlisting; also try caption instead of title
-%}
-
-%Elegantpar
-\RequirePackage{tikz}
-\definecolor{tcolor}{RGB}{90, 73, 121}
-\definecolor{lcolor}{RGB}{96, 113, 191}
-\definecolor{pcolor}{RGB}{240, 230, 240}
- 
-\newif\ifstartedinmathmode
-\newcommand{\elegantpar}[2]{%
- \relax\ifmmode\startedinmathmodetrue\else\startedinmathmodefalse\fi
-  %{\color{tcolor}\ifstartedinmathmode \ensuremath{\bm\langle #1 \bm\rangle}\else $\bm\langle$#1$\bm\rangle$\fi}%
-  {\color{tcolor}\ifstartedinmathmode \ensuremath{#1}\else #1\fi}%
-  \begin{tikzpicture}[remember picture, baseline=-0.75ex]%
-    \node[coordinate] (inText) {};%
-  \end{tikzpicture}%
-  \marginnote{%
-    \renewcommand{\baselinestretch}{1.0}%
-    \begin{tikzpicture}[remember picture]%
-      %\draw node[fill= pcolor, rounded corners,text width=\marginparwidth] (inNote){\footnotesize #2};%
-      \draw node[fill= pcolor, text width=\marginparwidth] (inNote){\footnotesize #2};%
-    \end{tikzpicture}%
-    }%
-  \begin{tikzpicture}[remember picture, overlay]%
-    \draw[draw = lcolor, thick]
-      ([yshift=-0.55em] inText)
-        -| ([xshift=-3.55em] inNote.west)
-        -| (inNote.west);%
-  \end{tikzpicture}%
-}
