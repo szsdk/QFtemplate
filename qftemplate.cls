@@ -153,3 +153,4 @@ justification=raggedright]{caption}
 %---------------------------
 
 \newtheorem{question}{问题}
+\crefformat{question}{#2问题#1#3}
