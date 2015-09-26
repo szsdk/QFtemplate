@@ -15,6 +15,11 @@
 \newcommand{\ekv}[1]{\kvsetkeys{NOTECLASS}{#1}}
 
 %---------------------------
+%Math package
+%---------------------------
+\RequirePackage{amsmath, amsthm}
+
+%---------------------------
 %Color defination
 %---------------------------
 
@@ -146,7 +151,6 @@ justification=raggedright]{caption}
 \RequirePackage{graphicx}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \RequirePackage{placeins}
-\RequirePackage{amsmath, amsthm}
 
 %---------------------------
 %question and answer
