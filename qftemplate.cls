@@ -34,10 +34,12 @@
 %---------------------------
 %hyperlink
 %---------------------------
-%\RequirePackage[unicode,psdextra]{hyperref} % Required for hyperlinks
-\RequirePackage[unicode]{hyperref} % Required for hyperlinks
+\RequirePackage[unicode,psdextra]{hyperref} % Required for hyperlinks
 \hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 \RequirePackage[nameinlink]{cleveref}
+
+%fix the problem about wrong process in psdextra
+\appto{\psdmapshortnames}{\let\mu\textmugreek}
 
 %---------------------------
 %Declare Options
@@ -119,7 +121,6 @@
 
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
 \RequirePackage{lastpage}  % Number of pages in the document
-\RequirePackage{etoolbox}
 \pagestyle{fancy}          % Enables the custom headers/footers
 \fancyhead[RO,LE]{\color{color1!80}\thepage}
 \fancyhead[LO,RE]{}
