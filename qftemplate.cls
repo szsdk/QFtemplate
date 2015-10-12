@@ -158,4 +158,7 @@ justification=raggedright]{caption}
 %---------------------------
 
 \newtheorem{question}{问题}
+\newtheorem{lemma}{引理}
+
 \crefformat{question}{#2问题#1#3}
+\crefname{lemma}{引理}{引理}
